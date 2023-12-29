@@ -1,0 +1,17 @@
+#include<stdio.h>
+#include<string.h>
+void reve(char *str)
+{
+    if(*str)
+    {
+        reve(str+1);
+        putchar(*str);
+    }
+}
+int main()
+{
+    char orig[]="rajnish";
+    reve(orig);
+    printf("\n");
+    return 0;  
+}
