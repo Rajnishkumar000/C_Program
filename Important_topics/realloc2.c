@@ -6,8 +6,7 @@ int main()
 		*marks; // this marks pointer hold the base address
 				// of the block created
 	int ans;
-	marks = (int*)malloc(sizeof(
-		int)); // dynamically allocate memory using malloc
+	marks = (int*)malloc(sizeof(int)); // dynamically allocate memory using malloc
 	// check if the memory is successfully allocated by
 	// malloc or not?
 	if (marks == NULL) {
@@ -28,11 +27,7 @@ int main()
 
 			if (ans == 1) {
 				index++;
-				marks = (int*)realloc(
-					marks,
-					(index + 1)
-						* sizeof(
-							int)); // Dynamically reallocate
+				marks = (int*)realloc(marks,(index + 1)* sizeof(int)); // Dynamically reallocate
 								// memory by using realloc
 				// check if the memory is successfully
 				// allocated by realloc or not?

@@ -14,9 +14,10 @@ struct struct_example {
 // declaring union 
 
 union union_example { 
+	char name[1]; 
 	int integer; 
 	float decimal; 
-	char name[20]; 
+	
 }; 
 
 void main() 
@@ -28,14 +29,10 @@ void main()
 
 	// creating variable for union 
 	// and initializing values 
-	union union_example u = { 18, 38, "geeksforgeeks" }; 
+	union union_example u = { .name = "g",18, 38 }; 
 
-	printf("structure data:\n integer: %d\n"
-		"decimal: %.2f\n name: %s\n", 
-		s.integer, s.decimal, s.name); 
-	printf("\nunion data:\n integer: %d\n"
-		"decimal: %.2f\n name: %s\n", 
-		u.integer, u.decimal, u.name); 
+	printf("structure data:\n integer: %d\n" "decimal: %.2f\n name: %s\n", s.integer, s.decimal, s.name); 
+	printf("\nunion data:\n integer: %d\n""decimal: %.2f\n name: %s\n", u.integer, u.decimal, u.name); 
 
 	// difference two and three 
 	printf("\nsizeof structure : %d\n", sizeof(s)); 

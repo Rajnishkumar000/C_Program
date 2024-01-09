@@ -7,7 +7,7 @@ int main()
 	// This pointer will hold the
 	// base address of the block created
 	int *ptr, *ptr1;
-	int n, i;
+	int n;
 
 	// Get the number of elements for the array
 	n = 5;
@@ -29,18 +29,22 @@ int main()
 
 		// Memory has been successfully allocated
 		printf("Memory successfully allocated using malloc.\n");
+		printf("This may give Garbage value %d",*ptr);
+		printf("%p\n",ptr1);
 
 		// Free the memory
 		free(ptr);
+		
 		printf("Malloc Memory successfully freed.\n");
 
 		// Memory has been successfully allocated
-		printf("\nMemory successfully allocated using calloc.\n");
+		printf("Memory successfully allocated using calloc.\n");
         printf("%p\n",ptr1);
+        printf("%d\n",*ptr1);
 		// Free the memory
 		free(ptr1);
 		printf("Calloc Memory successfully freed.\n");
-        printf("%p\n",ptr1);
+        printf("%d\n",*ptr1);
 
 
 	}

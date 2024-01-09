@@ -1,8 +1,9 @@
 // union abc{  
 // int a;  
 // char b;  
-// float c;  
 // double d;  
+// float c;  
+
 // };  
 // int main()  
 // {  
@@ -12,18 +13,21 @@
 
 union abc  
 {  
-int a;  
+// int a;  
 char b; 
-int c;  
-double d;
+// int c;  
+// double d;
 }var;  
 int main()  
 {  
-  var.b=68.9;
-  var.a = 66; 
+  // var.a = 66; 
+  // var.b='a';
+  var.b=-149.7;//decimal me rotation nahi hoga
+  //Rotation will be from -128 to 127
   
-  printf("\n a = %d", var.a);  
+  // printf("\n a = %d", var.a);  
   printf("\n b = %d", var.b);  
-  printf("\n c = %d", var.c);  
-  printf("\n d = %d", var.d);  
+  // printf("\n c = %d", var.c);  
+  // printf("\n d = %d", var.d);  
+  // printf("\n d = %c", var.b); //follows max ascii and check format
 }   
