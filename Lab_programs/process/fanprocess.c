@@ -1,25 +1,29 @@
-#include <stdio.h>
-#include <unistd.h>
-int main()
-{
-    printf("parent %ld\n", (long)getpid());
-    for (int i = 0; i < 3; i++)
-    {
-        int pid;
-        pid = fork();
 
-        if (pid == -1)
-        {
-            printf("Failed to create process");
-            return 1;
-        }
-
-        else if (pid == 0)
-        {
-            printf("child %d from parents %d\n", getpid(),getppid());
-           
-        }
-       
-    }
-    return 0;
-}
+// C program to create a fan of processes 
+  
+#include <stdio.h> 
+#include <stdlib.h> 
+#include <sys/wait.h> 
+#include <unistd.h> 
+  
+// Driver Code 
+int main() 
+{ 
+    // Iterate in the range [0, 2] 
+    for (int i = 0; i < 3; i++) { 
+        if (fork() == 0) { 
+            // getpid gives process id 
+            // getppid gives parent process id 
+            printf("child pid %d from the"
+                   " parent pid %d\n", 
+                   getpid(), getppid()); 
+  
+            // Set Normal termination of 
+            // the program 
+            exit(0); 
+        } 
+    } 
+  
+    for (int i = 0; i < 3; i++) 
+      wait(NULL); 
+} 
